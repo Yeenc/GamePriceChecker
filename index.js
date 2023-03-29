@@ -13,13 +13,13 @@ const commands = [
     },
 ];
 
-const rest = new REST({ version: '10' }).setToken('MTA4OTk3ODYwMzIyNTIzMTM3NA.GhOPDu.gGo6fj2oTAZeVCpOWWQJSLVQ_hmVghynMFYVDU');
+const rest = new REST({ version: '10' }).setToken('My-Special-Token');
 
 (async () => {
     try {
         console.log('Started refreshing application (/) commands.');
 
-        await rest.put(Routes.applicationCommands('1089978603225231374'), { body: commands });
+        await rest.put(Routes.applicationCommands('My-Special-ID'), { body: commands });
 
         console.log('Successfully reloaded application (/) commands.');
     } catch (error) {
@@ -112,4 +112,4 @@ client.on('interactionCreate', async interaction => {
             });
     }
 });
-client.login('MTA4OTk3ODYwMzIyNTIzMTM3NA.GhOPDu.gGo6fj2oTAZeVCpOWWQJSLVQ_hmVghynMFYVDU');
+client.login('My-Special-Token');
